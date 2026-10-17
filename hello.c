@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    printf("Git tracking active.\n");
+    printf("Git workflow is now setup and working.\n");
     return 0;
 }
