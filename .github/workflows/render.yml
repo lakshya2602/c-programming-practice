@@ -13,11 +13,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install System Dependencies (FFmpeg & LaTeX)
+      - name: Install System Dependencies (Pango, FFmpeg & LaTeX)
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             ffmpeg \
+            pkg-config \
+            libcairo2-dev \
+            libpango1.0-dev \
             texlive \
             texlive-latex-extra \
             texlive-fonts-extra \
@@ -43,5 +46,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: math-animation
-          path: media/videos/scene/1080p60/MathConcept.mp4
+          path: media/videos/**/*.mp4
           retention-days: 7
